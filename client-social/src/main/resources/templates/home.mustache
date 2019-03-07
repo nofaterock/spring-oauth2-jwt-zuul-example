@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<title>OAuth2 Client</title>
+	<meta name="viewport" content="width=device-width"/>
+	<base href="/"/>
+	<link rel="stylesheet" type="text/css" href="/client/webjars/bootstrap/4.3.1/css/bootstrap.min.css"/>
+	<script type="text/javascript" src="/client/webjars/jquery/3.3.1-2/jquery.min.js"></script>
+	<script type="text/javascript" src="/client/webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<h1>OAuth2 Client (Social)</h1>
+	<hr/>
+	<p>
+		<a href="/client/login/facebook">Login with Facebook</a><br>
+		<a href="/client/login/github">Login with Github</a>
+	</p>
+	<hr/>
+	<p>
+		Logged in as : <span id="logged" class="text-danger"></span>
+		<a id="logout" href="/client/logout">logout</a>
+	</p>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$.ajax({
+				url:      '/client/me',
+				complete: function (xhr, textStatus) {
+					$('#logged').text(xhr.responseText);
+					if (textStatus !== 'success') {
+						$('#logout').hide();
+					}
+				}
+			});
+		});
+	</script>
+</body>
+</html>

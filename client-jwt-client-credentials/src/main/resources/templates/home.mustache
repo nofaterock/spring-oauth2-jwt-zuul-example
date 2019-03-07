@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<title>OAuth2 Client</title>
+	<meta name="viewport" content="width=device-width"/>
+	<base href="/"/>
+	<link rel="stylesheet" type="text/css" href="/client/webjars/bootstrap/4.3.1/css/bootstrap.min.css"/>
+	<script type="text/javascript" src="/client/webjars/jquery/3.3.1-2/jquery.min.js"></script>
+	<script type="text/javascript" src="/client/webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<h1>OAuth2 Client (client_credentials)</h1>
+	<hr/>
+	<p>
+		Call resource API (/zuul-gateway/api/v1/hello) : <span id="result_v1_hello" class="text-danger"></span><br>
+		Call resource API (/zuul-gateway/api/v1/me) : <span id="result_v1_me" class="text-danger"></span><br>
+		Call resource API (/zuul-gateway/api/v1/user) : <span id="result_v1_user" class="text-danger"></span><br>
+		Call resource API (/zuul-gateway/api/v1/master) : <span id="result_v1_master" class="text-danger"></span><br>
+		Call resource API (/zuul-gateway/api/v1/client) : <span id="result_v1_client" class="text-danger"></span><br>
+		<br>
+		Call resource API (/zuul-gateway/api/v2/hello) : <span id="result_v2_hello" class="text-danger"></span><br>
+		Call resource API (/zuul-gateway/api/v2/me) : <span id="result_v2_me" class="text-danger"></span><br>
+		Call resource API (/zuul-gateway/api/v2/user) : <span id="result_v2_user" class="text-danger"></span><br>
+		Call resource API (/zuul-gateway/api/v2/master) : <span id="result_v2_master" class="text-danger"></span><br>
+		Call resource API (/zuul-gateway/api/v2/client) : <span id="result_v2_client" class="text-danger"></span>
+	</p>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			var apiVersions = ['v1', 'v2'];
+			var apis        = ['hello', 'me', 'user', 'master', 'client'];
+
+			$.each(apiVersions, function (i, apiVersion) {
+				$.each(apis, function (j, api) {
+					$.ajax({
+						url:      '/client/api/' + apiVersion + '/' + api,
+						complete: function (xhr) {
+							console.log('#result_' + apiVersion + '_' + api + '\t' + $('#result_' + apiVersion + '_' + api).length + '\t' + xhr.responseText);
+							$('#result_' + apiVersion + '_' + api).text(xhr.responseText);
+						}
+					});
+				});
+			});
+		});
+	</script>
+</body>
+</html>

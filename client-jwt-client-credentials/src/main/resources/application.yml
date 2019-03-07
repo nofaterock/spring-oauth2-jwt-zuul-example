@@ -1,0 +1,18 @@
+server:
+    port: 8080
+    servlet:
+        context-path: /client
+spring:
+    application:
+        name: client-jwt-client-credentials
+    devtools:
+        livereload:
+            enabled: true
+    mustache:
+        cache: false
+security:
+    oauth2:
+        client:
+            client-id: client1
+            client-secret: client1pwd
+            access-token-uri: http://localhost:8084/zuul-gateway/oauth/token

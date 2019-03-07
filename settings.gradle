@@ -1,0 +1,10 @@
+rootProject.name = 'spring-oauth2-jwt-zuul-example'
+
+include 'oauth2-auth-server',
+		'oauth2-resource-server-1',
+		'oauth2-resource-server-2',
+		'oauth2-zuul-gateway',
+		'client-jwt-client-credentials',
+		'client-jwt-authorization-code',
+		'client-social'
+

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<title>OAuth2 Server</title>
+	<meta name="viewport" content="width=device-width"/>
+	<base href="/"/>
+	<link rel="stylesheet" type="text/css" href="auth-server/css/login.css"/>
+	<script type="text/javascript" src="/auth-server/webjars/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+	<form method="post" action="/auth-server/login">
+		<input type="text" name="username" placeholder="아이디" value="user1"/>
+		<input type="password" name="password" placeholder="비밀번호" value="1234"/>
+		<button type="submit">로그인</button>
+	</form>
+	<span>{{#exception}}{{.}}{{/exception}}</span>
+	<script type="text/javascript">
+		$(document).ready(function () {
+
+		});
+	</script>
+</body>
+</html>

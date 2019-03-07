@@ -1,0 +1,52 @@
+buildscript {
+	ext {
+		springBootVersion = '2.1.2.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: "idea"
+
+group = 'oauth2-demo'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+ext {
+	set('springCloudVersion', 'Greenwich.RELEASE')
+}
+
+allprojects {
+	apply plugin: 'java'
+	apply plugin: "idea"
+	apply plugin: 'org.springframework.boot'
+	apply plugin: 'io.spring.dependency-management'
+
+	sourceCompatibility = '1.8'
+	[compileJava, compileTestJava]*.options*.encoding = "UTF-8"
+
+	repositories {
+		mavenCentral()
+		maven { url 'https://repo.spring.io/milestone' }
+	}
+
+	idea {
+		module {
+			outputDir = file("${buildDir}/classes/main")
+			testOutputDir = file("${buildDir}/classes/test")
+		}
+	}
+}
+
+subprojects { subproject ->
+	dependencyManagement {
+		imports {
+			mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+		}
+	}
+}

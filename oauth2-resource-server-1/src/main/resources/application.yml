@@ -1,0 +1,26 @@
+server:
+    port: 8082
+    servlet:
+        context-path: /resource-server-1
+spring:
+    application:
+        name: oauth2-resource-server-1
+    devtools:
+        livereload:
+            port: 35782
+security:
+    oauth2:
+        resource:
+            jwt:
+                key-value:
+                    # keytool -export -keystore jwtkeystore.jks -alias jwtkey -file jwtkey.cer
+                    # openssl x509 -inform der -in example.cer -pubkey -noout
+                    -----BEGIN PUBLIC KEY-----
+                    MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAn26rTenUhYdD0NrbNHw6
+                    YwrbssanhicMu2x0gZZ3bVBgp2LYPLnBCjr/tFC9DMXXQXEph+krPNpeqEZ7tLhZ
+                    4XorFcfUhmh7/LyDvTReIVJMfcTi5xXBIfC8E9L1EYtiSHDM3riCffeZSef2XDsr
+                    zruzbLgzGdqxMh2q9GrA2DzfchnoKyUsPIm6A564tHtEoGvRvosEebhcuMd7l+o8
+                    ox+Z/USLR1RhWkZc8U8gfQAFtVcOc3B5AwREfq8RJ9h5uZO6Hr/m4JsMggeXqyBx
+                    FsFzOTjhxEYOWuF0+3Pg5K6lSW96vtXXilgRBTH9w0Yn9XkWH3I9mlQQd1rroxpq
+                    CQIDAQAB
+                    -----END PUBLIC KEY-----

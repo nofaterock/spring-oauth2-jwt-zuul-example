@@ -1,0 +1,54 @@
+server:
+    port: 8084
+    servlet:
+        context-path: /zuul-gateway
+spring:
+    application:
+        name: oauth2-zuul-gateway
+    devtools:
+        livereload:
+            port: 35784
+    groovy:
+        template:
+            enabled: false
+            check-template-location: false
+security:
+    oauth2:
+        resource:
+            jwt:
+                key-value:
+                    # keytool -export -keystore jwtkeystore.jks -alias jwtkey -file jwtkey.cer
+                    # openssl x509 -inform der -in example.cer -pubkey -noout
+                    -----BEGIN PUBLIC KEY-----
+                    MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAn26rTenUhYdD0NrbNHw6
+                    YwrbssanhicMu2x0gZZ3bVBgp2LYPLnBCjr/tFC9DMXXQXEph+krPNpeqEZ7tLhZ
+                    4XorFcfUhmh7/LyDvTReIVJMfcTi5xXBIfC8E9L1EYtiSHDM3riCffeZSef2XDsr
+                    zruzbLgzGdqxMh2q9GrA2DzfchnoKyUsPIm6A564tHtEoGvRvosEebhcuMd7l+o8
+                    ox+Z/USLR1RhWkZc8U8gfQAFtVcOc3B5AwREfq8RJ9h5uZO6Hr/m4JsMggeXqyBx
+                    FsFzOTjhxEYOWuF0+3Pg5K6lSW96vtXXilgRBTH9w0Yn9XkWH3I9mlQQd1rroxpq
+                    CQIDAQAB
+                    -----END PUBLIC KEY-----
+zuul:
+    sensitive-headers: Cookie,Set-Cookie
+    routes:
+        auth-server:
+            path: /oauth/**
+            url: http://localhost:8081/auth-server/oauth
+        resource-server-1:
+            path: /api/v1/**
+            url: http://localhost:8082/resource-server-1
+        resource-server-2:
+            path: /api/v2/**
+            url: http://localhost:8083/resource-server-2
+gateway:
+    zuul:
+        filters:
+            base-path: src/main/resources/filters/
+management:
+    endpoint:
+        env:
+            enabled: true
+    endpoints:
+        web:
+            exposure:
+                include: '*'

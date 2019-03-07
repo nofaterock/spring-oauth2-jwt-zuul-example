@@ -1,0 +1,14 @@
+dependencies {
+	implementation 'org.projectlombok:lombok'
+
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-mustache'
+	implementation 'org.springframework.cloud:spring-cloud-starter-oauth2'
+
+	implementation 'org.webjars:jquery:3.3.1-2'
+	implementation 'org.webjars:bootstrap:4.3.1'
+
+	runtimeOnly 'org.springframework.boot:spring-boot-devtools'
+
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
