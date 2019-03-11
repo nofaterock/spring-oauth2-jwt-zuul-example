@@ -28,7 +28,6 @@ public class User {
 	@Column(length = 100, nullable = false)
 	private String password;
 
-	//1:수퍼관리자, 2:관리자, 3:사용자
 	@Column(length = 1, nullable = false)
 	@Enumerated(EnumType.STRING)
 	private UserType userType;
