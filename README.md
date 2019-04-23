@@ -5,3 +5,5 @@
 - Spring Cloud OAuth2
 - Spring Security JWT
 - Spring Cloud Netflix Zuul
+- Spring Data JPA
+- Mustache
