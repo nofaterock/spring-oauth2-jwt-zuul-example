@@ -5,7 +5,7 @@ import org.springframework.security.oauth2.client.resource.OAuth2ProtectedResour
 import org.springframework.security.oauth2.client.token.grant.code.AuthorizationCodeResourceDetails;
 
 /**
- * @author nofaterock
+ * @author 한승룡
  * @since 2019-02-20
  */
 public class ClientResources {

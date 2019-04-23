@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
- * @author nofaterock
+ * @author 한승룡
  * @since 2019-03-07
  */
 @Slf4j

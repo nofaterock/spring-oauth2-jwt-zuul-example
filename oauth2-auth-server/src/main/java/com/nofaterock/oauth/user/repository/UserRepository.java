@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 /**
- * @author nofaterock
+ * @author 한승룡
  * @since 2019-02-14
  */
 @Repository

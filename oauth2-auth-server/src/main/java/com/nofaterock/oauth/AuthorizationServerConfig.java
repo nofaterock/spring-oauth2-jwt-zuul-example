@@ -22,7 +22,7 @@ import javax.sql.DataSource;
 import java.security.KeyPair;
 
 /**
- * @author nofaterock
+ * @author 한승룡
  * @since 2019-02-14
  */
 @Configuration

@@ -3,7 +3,7 @@ package com.nofaterock.oauth.user.enums;
 import lombok.Getter;
 
 /**
- * @author nofaterock
+ * @author 한승룡
  * @since 2019-02-14
  */
 public enum UserType {

@@ -14,7 +14,7 @@ import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenCo
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 
 /**
- * @author nofaterock
+ * @author 한승룡
  * @since 2019-02-15
  */
 @Configuration

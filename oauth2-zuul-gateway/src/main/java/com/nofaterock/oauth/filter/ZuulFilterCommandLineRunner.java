@@ -10,7 +10,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 /**
- * @author nofaterock
+ * @author 한승룡
  * @since 2019-02-26
  */
 @Slf4j

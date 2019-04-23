@@ -12,7 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
- * @author nofaterock
+ * @author 한승룡
  * @since 2019-02-14
  */
 @Data

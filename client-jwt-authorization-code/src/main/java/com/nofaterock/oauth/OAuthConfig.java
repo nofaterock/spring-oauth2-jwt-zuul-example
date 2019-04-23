@@ -9,7 +9,7 @@ import org.springframework.security.oauth2.client.OAuth2RestTemplate;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableOAuth2Client;
 
 /**
- * @author nofaterock
+ * @author 한승룡
  * @since 2019-02-25
  */
 @Configuration

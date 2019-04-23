@@ -17,7 +17,7 @@ import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 /**
- * @author nofaterock
+ * @author 한승룡
  * @since 2019-02-14
  */
 @Configuration
