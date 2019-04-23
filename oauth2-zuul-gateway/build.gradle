@@ -1,15 +1,16 @@
 dependencies {
-	implementation 'org.projectlombok:lombok'
-	implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml'
-
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-zuul'
 	implementation 'org.springframework.cloud:spring-cloud-starter-oauth2'
 	implementation 'org.springframework.security:spring-security-jwt'
 	implementation 'org.codehaus.groovy:groovy-all:2.5.6'
+	implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml'
 
 	runtimeOnly 'org.springframework.boot:spring-boot-devtools'
-
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	testCompileOnly 'org.projectlombok:lombok'
+	testAnnotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test'
 }
