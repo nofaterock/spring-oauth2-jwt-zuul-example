@@ -1,10 +1,12 @@
- # Spring boot OAuth2 with JWT, Netflix Zuul 
+ # Spring Security, OAuth2, JWT, Zuul Example 
 
-- Spring Boot 2.1.3
+- Java 1.8.0
+- Gradle 6.0.1
+- Spring Boot 2.2.2
 - Spring Cloud Security
 - Spring Cloud OAuth2
-- Spring Security JWT
 - Spring Cloud Netflix Zuul
+- Spring Security JWT
 - Spring Data JPA
 - Mustache
 

@@ -1,15 +1,10 @@
-pluginManagement {
-	repositories {
-		gradlePluginPortal()
-	}
-}
 rootProject.name = 'spring-oauth2-jwt-zuul-example'
 
-include 'oauth2-auth-server',
-		'oauth2-resource-server-1',
-		'oauth2-resource-server-2',
-		'oauth2-zuul-gateway',
-		'client-jwt-client-credentials',
-		'client-jwt-authorization-code',
-		'client-social'
+include 'oauth2-auth-server'
+include 'oauth2-resource-server-1'
+include 'oauth2-resource-server-2'
+include 'oauth2-zuul-gateway'
+include 'client-jwt-client-credentials'
+include 'client-jwt-authorization-code'
+include 'client-social'
 
